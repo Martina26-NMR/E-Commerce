@@ -46,7 +46,9 @@ export class SignUpComponent {
           this.isLoading = false; // reset loading state
 
           console.log('Error', err.error);
-          this.responseErrorMessage = err.error.message;
+         console.log('Full Error:', err);
+this.responseErrorMessage = err.error?.message || 'An unexpected error occurred';
+
         },
       });
     }
