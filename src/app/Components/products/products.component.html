@@ -1,0 +1,10 @@
+
+<input [(ngModel)]="searchTerm" type="search" placeholder="Please enter product name" class="form-control mb-3 mt-5">
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 mt-3">
+    @for(product of (productList | search:searchTerm); track product._id){
+    <div class="col my-5">
+        <app-product [product]="product"></app-product>
+    </div>
+
+    }
+</div>

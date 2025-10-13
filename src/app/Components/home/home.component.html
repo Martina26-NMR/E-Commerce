@@ -1,0 +1,12 @@
+
+<div class="my-3"><app-main-slider></app-main-slider></div>
+<div class="my-3"><app-categories-slider></app-categories-slider></div>
+
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 mt-3">
+    @for(product of productList; track product._id){
+    <div class="col my-5">
+        <app-product [product]="product"></app-product>
+    </div>
+
+    }
+</div>

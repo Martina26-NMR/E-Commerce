@@ -1,0 +1,47 @@
+@if (productDetails) {
+<div class="row mt-5">
+  <div class="col-md-4">
+    <div class="p-5 border">
+      <owl-carousel-o [options]="customOptions">
+        @for (image of productDetails.images; track $index) {
+        <ng-template carouselSlide>
+          <img [src]="image" class="w-100" alt="product image">
+        </ng-template>
+        }
+      </owl-carousel-o>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="p-5">
+      <h2>{{ productDetails.title }}</h2>
+      <p>{{ productDetails.description }}</p>
+      <span class="text-main">{{ productDetails.category.name }}</span>
+      <p>Available quantity: {{ productDetails.quantity }}</p>
+      <p>Brand: {{ productDetails.brand.name }}</p>
+
+      <div class="d-flex justify-content-between">
+        <span class="font-sm">{{ productDetails.price }} EGP</span>
+        <div>
+          <i class="fa-solid fa-star rating-color me-1"></i>
+          <span>{{ productDetails.ratingsAverage }}</span>
+        </div>
+      </div>
+      <div class="d-flex">
+       
+        <button class="btn bg-main text-white w-100 mt-3 me-3 d-flex align-items-center justify-content-center">
+          <span class="me-2">Add to Cart</span>
+          <i class="fas fa-shopping-cart cursor-pointer"></i>
+        </button>
+        <button class="btn bg-danger text-white w-100 mt-3 d-flex align-items-center justify-content-center">
+          <span class="me-2">Add to Wishlist</span>
+          <i class="fa-regular fa-heart fs-4 cursor-pointer"></i>
+        </button>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+}

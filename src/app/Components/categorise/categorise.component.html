@@ -1,0 +1,11 @@
+
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 mt-3 p-3 rounded-3 h-100">
+       @for(category of categorieslList; track category._id){
+    <div class="col my-5">
+      <img [src]="category.image" [alt]="category.name" [title]="category.name" class="w-100 object-fit-cover">
+        <p class="mt-2 fw-bold">{{ category.name }}</p>
+    </div>
+
+    }
+</div>
+

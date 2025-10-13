@@ -1,0 +1,67 @@
+@if(cartDetials != null){
+@if(cartDetials.numOfCartItems>0){
+<div class="container bg-main-light p-5 mt-5">
+    <h4 class="my-3 fw-medium">Shop Cart</h4>
+    <p class="text-main fw-medium font-sm border-bottom py-2"> Total Price: {{cartDetials.data.totalCartPrice}}</p>
+
+
+    @for(cartProduct of cartDetials.data.products;track cartProduct._id)
+    {
+
+    <div class="row border-bottom py-3">
+        <div class="col-md-1">
+            <div> <img class="w-100 img-thumbnail border rounded" [src]="cartProduct.product.imageCover" alt="">
+            </div>
+        </div>
+
+        <div class="col-md-11">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="my-0 fw-medium">{{cartProduct.product.title}}</p>
+                    <p class="text-main fw-medium my-2 font-sa">Price: {{cartProduct.price}} EGP</p>
+                    <button class="deleted-card-btn btn border rounded border-success"
+                        (click)="deleteCartItem(cartProduct.product._id)">
+                        <i class="fa-solid fa-trash-can text-main"></i>
+                        <span class="ms-2">Remove</span>
+                    </button>
+                </div>
+                <div>
+                    <div>
+
+                        <button (click)="updateProductQuatity(cartProduct.product._id,cartProduct.count + 1 )"
+                            class="extra-card-btn bg-main px-2 py-1 mt-3 rounded text-white border-0">+</button>
+                        <span class="mx-2">{{cartProduct.count}}</span>
+                        <button (click)="updateProductQuatity(cartProduct.product._id,cartProduct.count - 1)"
+                            class="extra-card-btn bg-main px-2 py-1 rounded text-white border-0">-</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    }
+
+    <div class="d-flex justify-content-between">
+        <div>
+            <button  [routerLink]="['/shipping-address', cartDetials.data._id , 'card']"class="btn bg-main text-white mt-3 me-3">Online payment <img src="images/visa-1.svg" class="ms-2" style="width: 20px;"></button>
+            <button [routerLink]="['/shipping-address', cartDetials.data._id , 'cash' ]" class="btn bg-main text-white mt-3 me-3"> Cash Payment</button>
+        </div>
+        <button (click)="clearCart()" class="btn btn-danger mt-3">
+            Remove all
+            <i class="ms-2 fa-solid fa-trash"></i>
+        </button>
+    </div>
+
+</div>
+}
+
+@else {
+<h3 class="mt-5 p-3 bg-main-light container text-center rounded shadow text-main">N0 Data Found</h3>
+}
+
+}
+
+@else {
+<h3 class="mt-5 p-3 bg-main-light container text-center rounded shadow text-main">N0 Data Found</h3>
+}

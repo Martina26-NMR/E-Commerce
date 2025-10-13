@@ -1,0 +1,6 @@
+.col img {
+  width: 100%;
+  height: clamp(150px, 25vw, 220px);
+  object-fit: cover;
+  border-radius: 10px;
+}

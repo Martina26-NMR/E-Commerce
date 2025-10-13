@@ -1,0 +1,46 @@
+<div class="container pt-5 mt-5">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg rounded-4">
+        <div class="card-body p-4">
+          <h3 class="text-center mb-4 text-main">please enter your verification code</h3>
+          <p class="text-secondary fs-6">We have sent a verification code to your email address. Please enter the code below to verify your identity and proceed to reset your password</p>
+
+          <!-- Success message -->
+          <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }} 
+          </div>
+
+          <!-- Error message -->
+          <div *ngIf="responseErrorMessage" class="alert alert-danger">
+            {{ responseErrorMessage }}
+          </div>
+
+
+          <!-- Form Start -->
+          <form [formGroup]=" VerfyCodeForm" (ngSubmit)="handleVerifyCode()">
+            <!-- verification -->
+            <div class="mb-3">
+              <label for="verification" class="form-label ">Verification Code<span class="text-danger">*</span></label>
+              <input id="verification" type="text" formControlName="resetCode" class="form-control" autocomplete="off" />
+              <div *ngIf="resetCode?.touched && resetCode?.invalid" class="  text-danger mt-2">
+                <p *ngIf="resetCode?.errors?.['required']">resetCode is required</p>
+                <p *ngIf="resetCode?.errors?.['resetCode']">Invalid resetCode format</p>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-flex justify-content-center">
+              <button type="submit" [disabled]=" VerfyCodeForm.invalid || isLoading"
+                class="btn border-dark-subtle submit-btn">
+                <span *ngIf="!isLoading"> Verify </span>
+                <span *ngIf="isLoading" class="fa-solid fa-spinner fa-spin"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg rounded-4">
+        <div class="card-body p-4">
+          <h3 class="text-center mb-4 text-main">Etid User Information</h3>
+<div>
+@if(responseErrorMessage){
+  <div class="alert alert-danger pb-0 px-2 text-danger">
+    <p>{{responseErrorMessage}}</p>
+  </div>
+}
+</div>
+<!-- !form -->
+<form #etidUserInfo="ngForm" (ngSubmit)="onSubmit(etidUserInfo)">
+            <!--! username  -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input  #usernameControl="ngModel" ngModel name="name" class="form-control" type="text" id="name" required minlength=" 3" />
+            </div>
+
+       @if(usernameControl.touched){
+             @if(usernameControl.errors?.['required']){
+            <div class="alert alert-danger pb-0 px-2 text-danger">
+              <p>Name is required</p>
+            </div>
+            } @else if (usernameControl.errors?.['minlength']) {
+            <div class="alert alert-danger pb-0 px-2 text-danger">
+              <p>Name must be at least 3 characters long</p>
+            </div>
+            }
+
+       }
+<!-- ! email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input #email="ngModel" ngModel name="email" class="form-control" type="email" id="email" required email/>
+            </div>
+
+            @if(email.touched){
+                @if(email.errors?.['required']){
+            <div class="alert alert-danger pb-0 px-2 text-danger">
+              <p>Email is required</p>
+            </div>
+            } @else if (email.errors?.['pattern']) {
+            <div class="alert alert-danger pb-0 px-2 text-danger">
+              <p>Invalid email format</p>
+            </div>
+            }
+
+            }
+
+
+<!--! phone  -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input #phone="ngModel" ngModel name="phone" class="form-control" type="tel" id="phone" required phone />
+            </div>
+
+         @if(phone.touched){
+               @if(phone.errors?.['required']){
+            <div class="alert alert-danger pb-0 px-2 text-danger">
+              <p>Phone is required</p>
+            </div>
+            } @else if (phone.errors?.['pattern']) {
+            <div class="alert alert-danger pb-0 px-2 text-danger">
+              <p>Phone must be a valid phone number</p>
+            </div>
+            }
+         }
+
+            <div class="d-flex justify-content-center">
+              <button [disabled]="etidUserInfo.invalid" type="submit" class="btn border-dark-subtle  submit-btn">
+                @if(isLoading==false){<span >Etid Info</span>}
+                @if(isLoading==true){<span class="fa-solid fa-spinner fa-spin"></span>}
+              </button>
+            </div>
+        </form>
+<!-- !end form -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

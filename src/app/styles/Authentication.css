@@ -1,0 +1,10 @@
+form.ng-valid .submit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+form.ng-invalid .submit-btn {
+  background-color:white;
+  color:var(--main-color);
+}
+
+
