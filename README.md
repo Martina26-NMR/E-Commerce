@@ -5,7 +5,7 @@ This project is a fully responsive **E-Commerce website** built with **Angular**
 It allows users to browse products, add items to the cart, manage wishlists, and complete purchases online.
 
 ## 🚀 Live Demo  
-👉 [View Live Demo](https://myecommerce-demo.netlify.app/home)  
+👉 [View Live Demo](https://myecommerce-demo.netlify.app/)  
 
 ## 🛠️ Technologies Used  
 - **Angular 19+**  
