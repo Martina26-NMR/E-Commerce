@@ -1,59 +1,61 @@
-# ECommerce
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+# 🛍️ E-Commerce Website  
 
-## Development server
+This project is a fully responsive **E-Commerce website** built with **Angular**.  
+It allows users to browse products, add items to the cart, manage wishlists, and complete purchases online.
 
-To start a local development server, run:
+## 🚀 Live Demo  
+👉 [View Live Demo](myecommerce-demo.netlify.app)  
 
+## 🛠️ Technologies Used  
+- **Angular 19+**  
+- **Bootstrap 5**  
+- **ngx-owl**  
+- **HTML5 / CSS3**  
+- **TypeScript**  
+- **ES6**  
+- **RESTful API** for backend communication  
+
+## ⚙️ Setup Instructions  
+To run the project locally:  
 ```bash
+# Clone the repository
+git clone https://github.com/your-username/E-Commerce.git
+
+# Navigate into the project folder
+cd E-Commerce
+
+# Install dependencies
+npm install
+
+# Run the app
 ng serve
-```
+````
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open:
+👉 [http://localhost:4200/](http://localhost:4200/)
 
-## Code scaffolding
+## 📦 Build for Production
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+To build the project:
 
 ```bash
-ng generate --help
+ng build --output-path=dist
 ```
 
-## Building
+## 📸 Features
 
-To build the project run:
+✅ User Authentication (Login / Register / Forgot Password / 
+Reset Password /Verify Reset Code)
+✅ Product Listing and Filtering 
+✅ Add to Cart / Wishlist 
+✅ Checkout Page ( Cash / online payment )
+✅ Update User Password
+✅ Edit User Information 
+✅ Responsive Design in all Devices
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+👩‍💻 **Developed by [Martina Mohsen](https://github.com/Martina26-NMR)**
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
