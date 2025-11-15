@@ -32,9 +32,6 @@ npm install
 ng serve
 ````
 
-Then open:
-👉 [http://localhost:4200/](http://localhost:4200/)
-
 ## 📦 Build for Production
 
 To build the project:
